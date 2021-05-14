@@ -3,6 +3,7 @@ package br.com.crudhibernate.controller;
 import br.com.crudhibernate.exception.ResourceNotFoundException;
 import br.com.crudhibernate.model.Employee;
 import br.com.crudhibernate.repository.EmployeeRepository;
+import org.aspectj.apache.bcel.Repository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -11,6 +12,7 @@ import javax.validation.Valid;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/v1")
@@ -28,6 +30,12 @@ public class EmployeeController {
             throws ResourceNotFoundException {
         Employee employee = employeeRepository.findById(employeeId)
                 .orElseThrow(() -> new ResourceNotFoundException("Employee not found for this id :: " + employeeId));
+        return ResponseEntity.ok().body(employee);
+    }
+
+    @GetMapping("/employees/email/{emailId}")
+    public ResponseEntity<Employee> getEmployeeByEmailId(@PathVariable(value = "emailId") String emailId) {
+        Employee employee = employeeRepository.findByEmailId(emailId);
         return ResponseEntity.ok().body(employee);
     }
 
