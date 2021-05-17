@@ -1,33 +1,33 @@
 <p *ngIf="!employees"><em>Carregando...</em></p>
 
 <div class="table-title">
-    <div class="row">
-        <div class="col-sm-12">
-            <h2 class="float-left">Funcionários</h2>
-            <button class="btn btn-primary float-right" (click)=create()>Cadastrar</button>
-        </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <h2 class="float-left">Funcionários</h2>
+      <button class="btn btn-primary float-right" (click)=create()>Cadastrar</button>
     </div>
+  </div>
 </div>
 
 <div class="table-responsive">
-    <table class='table table-striped' aria-labelledby="tableLabel" *ngIf="employees">
-        <thead>
-            <tr>
-                <th>Nome</th>
-                <th>Sobrenome</th>
-                <th>Email</th>
-                <th></th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let employee of employees">
-                <td>{{ employee.firstName }}</td>
-                <td>{{ employee.lastName }}</td>
-                <td>{{ employee.emailId }}</td>
-                <td><button class="btn btn-warning" (click)="edit(employee)">Editar</button></td>
-                <td><button class="btn btn-danger" (click)="delete(employee)">Excluir</button></td>
-            </tr>
-        </tbody>
-    </table>
+  <table class='table table-striped' aria-labelledby="tableLabel" *ngIf="employees">
+    <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Sobrenome</th>
+      <th>Email</th>
+      <th></th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let employee of employees">
+      <td>{{ employee.firstName }}</td>
+      <td>{{ employee.lastName }}</td>
+      <td>{{ employee.emailId }}</td>
+      <td><button class="btn btn-warning" (click)="edit(employee)">Editar</button></td>
+      <td><button class="btn btn-danger" (click)="delete(employee)">Excluir</button></td>
+    </tr>
+    </tbody>
+  </table>
 </div>

@@ -4,15 +4,15 @@
 <!-- Aqui incluímos uma condição (ternária) no submit: Se o objeto employee não for nulo, é uma edição, do contrário, é uma criação-->
 <form [formGroup]="form" (ngSubmit)="this.employee ? this.edit() : this.create();">
   <div class="form-group">
-    <label for="descricao">Nome</label>
+    <label for="firstName">Nome</label>
     <input type="text" class="form-control" formControlName="firstName" placeholder="Nome">
   </div>
   <div class="form-group">
-    <label for="codigo">Sobrenome</label>
+    <label for="lastName">Sobrenome</label>
     <input type="text" class="form-control" formControlName="lastName" placeholder="Sobrenome">
   </div>
   <div class="form-group">
-    <label for="codigo">Email</label>
+    <label for="emailId">Email</label>
     <input type="text" class="form-control" formControlName="emailId" placeholder="Email">
   </div>
 
