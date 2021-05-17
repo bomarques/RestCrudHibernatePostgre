@@ -89,7 +89,7 @@ export class EmployeeCreateComponent implements OnInit {
     this.employeeService.put(this.employee).subscribe(result => {
 
       // Redireciona para o componente de produtos
-      this.router.navigateByUrl('employee');
+      this.router.navigateByUrl('employees');
     })
   }
 
