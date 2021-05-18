@@ -9,7 +9,7 @@ import { environment } from 'src/environments/environment'
 })
 export class EmployeeService {
 
-  url = 'http://localhost:8080/';
+
   constructor(private http: HttpClient,  @Inject('BASE_URL') private baseUrl: string) { }
 
 
@@ -26,11 +26,11 @@ export class EmployeeService {
   }
 
   put(employee: Employee): Observable<Employee[]> {
-    return this.http.put<Employee[]>(environment.baseUrl + 'api/employee/'+employee.id, employee);
+    return this.http.put<Employee[]>(environment.baseUrl + 'api/employees/'+employee.id, employee);
   }
 
   delete(id: number): Observable<Employee[]> {
-    return this.http.delete<Employee[]>(environment.baseUrl + 'api/employee/'+id);
+    return this.http.delete<Employee[]>(environment.baseUrl + 'api/employees/'+id);
   }
 
 }
