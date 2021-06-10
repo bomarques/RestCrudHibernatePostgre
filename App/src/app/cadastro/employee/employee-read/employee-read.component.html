@@ -4,13 +4,13 @@
   <div class="row">
     <div class="col-sm-12">
       <h2 class="float-left">Funcionários</h2>
-      <button class="btn btn-primary float-right" (click)=create()>Cadastrar</button>
+      <button class="btn btn-primary float-right" (click)="create()">Cadastrar</button>
     </div>
   </div>
 </div>
 
 <div class="table-responsive">
-  <table class='table table-striped' aria-labelledby="tableLabel" *ngIf="employees">
+  <table class="table table-striped" aria-labelledby="tableLabel" *ngIf="employees">
     <thead>
     <tr>
       <th>Nome</th>

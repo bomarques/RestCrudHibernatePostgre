@@ -9,7 +9,8 @@ const routes: Routes = [
 
     { path: 'employee/cadastro', component: EmployeeCreateComponent },
     { path: 'employee/cadastro/:id', component: EmployeeCreateComponent },
-    { path: 'employees', component: EmployeeReadComponent }
+    { path: 'employees', component: EmployeeReadComponent },
+
 
 ];
 

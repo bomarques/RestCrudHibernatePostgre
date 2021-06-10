@@ -57,9 +57,9 @@ export class EmployeeCreateComponent implements OnInit {
       // Preenche o form
       this.form.setValue({
         id: this.employee.id,
-        nome: this.employee.firstName,
-        sobrenome: this.employee.lastName,
-        email: this.employee.emailId
+        firstName: this.employee.firstName,
+        lastName: this.employee.lastName,
+        emailId: this.employee.emailId
       })
     })
   }
@@ -84,6 +84,14 @@ export class EmployeeCreateComponent implements OnInit {
 
     // Obtém os valores do formulário na interface
     this.employee = this.form.value;
+
+    // Se inscreve no serviço e aguarda o retorno
+    this.employeeService.put(this.employee).subscribe(result => {
+
+      // Redireciona para o componente de produtos
+      this.router.navigateByUrl('employees');
+    })
+
 
     // Se inscreve no serviço e aguarda o retorno
     this.employeeService.put(this.employee).subscribe(result => {
